@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Alínea h) </h2>
+<h3>Authors in Publisher : {{ pub_name }}</h3>
+
+{% block content %}
+
+    <table style="width: 50%">
+        {% for b in books_of_publisher %}
+            {% for a in b.authors.all %}
+                <tr>
+                    <td>{{ a.name }} </td>
+                    <td>{{ a.email }} </td>
+                </tr>
+            {% endfor %}
+        {% endfor %}
+    </table>
+
+{% endblock %}
+
+</body>
+
+</html>

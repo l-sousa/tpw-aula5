@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Alínea e)</h2>
+
+<p>Publishers:</p>
+<table style="width:100%">
+
+    {% for i in publishers %}
+        <tr>
+            <td><a href="/publisher_details/{{ i.name }}">{{ i.name }}</a></td>
+            <td><a href="/publisher_authors/{{ i.name }}">Authors</a></td>
+
+        </tr>
+    {% endfor %}
+
+</table>
+</body>
+</html>

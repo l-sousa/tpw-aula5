@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Alínea a)</h2>
+
+<p>Nomes dos livros:</p>
+<table style="width:100%">
+    {% for i in books %}
+        <tr>
+            <td><a href="/book_details/{{ i.title }}">{{ i.title }}</a></td>
+        </tr>
+    {% endfor %}
+
+</table>
+</body>
+</html>

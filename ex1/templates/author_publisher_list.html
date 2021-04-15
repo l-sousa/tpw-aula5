@@ -1,0 +1,28 @@
+{% extends "form.html" %}
+
+{% block results %}
+
+    <!-- <p>Search by: <strong>{{ query }}</strong></p>-->
+
+    {% if books %}
+        <p>Found {{ books|length }} book{{ books|pluralize }}.</p>
+
+        <ul>
+            {% for book in books %}
+                <li>{{ book.title }}</li>
+                <ul>
+                    <li>{{ book.publisher }}</li>
+                    <li>{{ book.date }}</li>
+                    <ul>
+                        {% for auth in book.authors.all %}
+                            <li>{{ auth }}</li>
+                        {% endfor %}
+
+                    </ul>
+                </ul>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Not found any results</p>
+    {% endif %}
+{% endblock %}
